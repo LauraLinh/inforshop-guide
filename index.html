@@ -1,2 +1,231 @@
 # inforshop-guide
 Đây là trang web hướng dẫn tất tần tật về INFORSHOP
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inforshop | Hướng dẫn sử dụng</title>
+  <style>
+    :root {
+      --blue: #174ea6;
+      --light: #eef5ff;
+      --ink: #18243a;
+      --muted: #65738a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    header {
+      padding: 34px 20px 28px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #123b80, #2879d9);
+    }
+    header .brand {
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      opacity: .9;
+    }
+    header h1 { margin: 10px 0; font-size: 30px; }
+    header p { margin: 0 auto; max-width: 540px; }
+    main { max-width: 760px; margin: 26px auto; padding: 0 16px; }
+    .intro { text-align: center; margin-bottom: 22px; }
+    .intro h2 { margin-bottom: 4px; }
+    .intro p, .muted { color: var(--muted); }
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .choice {
+      display: block;
+      width: 100%;
+      padding: 20px 15px;
+      border: 1px solid #e1e8f2;
+      border-radius: 16px;
+      background: white;
+      text-align: left;
+      color: var(--ink);
+      cursor: pointer;
+      font: inherit;
+      box-shadow: 0 4px 15px #1b37610a;
+    }
+    .choice:hover, .choice:focus {
+      border-color: var(--blue);
+      outline: 2px solid #d8e7ff;
+    }
+    .emoji { display: block; font-size: 29px; margin-bottom: 7px; }
+    .choice strong { display: block; font-size: 17px; }
+    .choice small { display: block; margin-top: 5px; color: var(--muted); }
+    .guide {
+      display: none;
+      margin-top: 22px;
+      padding: 23px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid #e1e8f2;
+    }
+    .guide.active { display: block; }
+    .guide h2 { margin-top: 0; color: var(--blue); }
+    .guide li { margin: 10px 0; padding-left: 3px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .link, .back {
+      display: inline-block;
+      padding: 11px 16px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      font: inherit;
+    }
+    .link { background: var(--blue); color: white; }
+    .back { border: 1px solid #ccd6e5; background: white; color: var(--ink); }
+    .notice {
+      margin-top: 18px;
+      padding: 13px 15px;
+      border-radius: 10px;
+      background: var(--light);
+      font-size: 14px;
+    }
+    footer { padding: 22px 16px 32px; text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 480px) {
+      header h1 { font-size: 25px; }
+      .menu { grid-template-columns: 1fr; }
+      .choice { padding: 16px; }
+      .guide { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">INFOSHOP CUSTOMER GUIDE</div>
+    <h1>Hướng dẫn sử dụng Inforshop</h1>
+    <p>Chọn nội dung bạn cần để xem hướng dẫn từng bước.</p>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="intro">
+        <h2>Bạn cần trợ giúp gì?</h2>
+        <p>Nhấn vào một mục bên dưới để bắt đầu.</p>
+      </div>
+
+      <div class="menu">
+        <button class="choice" onclick="showGuide('register')">
+          <span class="emoji">👤</span>
+          <strong>Đăng ký tài khoản</strong>
+          <small>Tạo tài khoản để sử dụng dịch vụ</small>
+        </button>
+        <button class="choice" onclick="showGuide('buy')">
+          <span class="emoji">🛒</span>
+          <strong>Cách mua sản phẩm</strong>
+          <small>Tìm sản phẩm và đặt mua</small>
+        </button>
+        <button class="choice" onclick="showGuide('pin')">
+          <span class="emoji">🎫</span>
+          <strong>Xem mã PIN thẻ</strong>
+          <small>Tìm thông tin thẻ đã mua</small>
+        </button>
+        <button class="choice" onclick="showGuide('password')">
+          <span class="emoji">🔐</span>
+          <strong>Quên mật khẩu</strong>
+          <small>Tìm cách khôi phục quyền truy cập</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="guide" id="register">
+      <h2>👤 Đăng ký tài khoản</h2>
+      <ol>
+        <li>Nhấn nút bên dưới để mở website Inforshop chính thức.</li>
+        <li>Tìm mục đăng nhập hoặc đăng ký thành viên.</li>
+        <li>Làm theo yêu cầu trên website chính thức để đăng ký.</li>
+        <li>Kiểm tra lại thông tin trước khi xác nhận.</li>
+      </ol>
+      <div class="notice">Giao diện và các bước đăng ký có thể thay đổi. Hãy làm theo hướng dẫn đang hiển thị trên website chính thức.</div>
+      <div class="actions">
+        <a class="link" href="https://www.inforshop.com.tw/home.jsp?lang=vn" target="_blank" rel="noopener">Mở Inforshop</a>
+        <button class="back" onclick="goHome()">← Quay lại</button>
+      </div>
+    </section>
+
+    <section class="guide" id="buy">
+      <h2>🛒 Cách mua sản phẩm</h2>
+      <ol>
+        <li>Mở website Inforshop chính thức.</li>
+        <li>Tìm và chọn sản phẩm bạn muốn mua.</li>
+        <li>Đọc kỹ loại sản phẩm, mệnh giá, thời hạn và điều kiện sử dụng.</li>
+        <li>Làm theo hướng dẫn trên website để đăng nhập và hoàn tất đơn hàng.</li>
+        <li>Kiểm tra trạng thái đơn hàng hoặc thông tin xác nhận sau khi mua.</li>
+      </ol>
+      <div class="notice">Trước khi thanh toán, hãy kiểm tra sản phẩm và tổng số tiền. Chỉ nhập thông tin thanh toán trên trang chính thức.</div>
+      <div class="actions">
+        <a class="link" href="https://www.inforshop.com.tw/home.jsp?lang=vn" target="_blank" rel="noopener">Mở cửa hàng</a>
+        <button class="back" onclick="goHome()">← Quay lại</button>
+      </div>
+    </section>
+
+    <section class="guide" id="pin">
+      <h2>🎫 Xem mã PIN thẻ đã mua</h2>
+      <ol>
+        <li>Mở website Inforshop chính thức và đăng nhập tài khoản đã dùng để mua.</li>
+        <li>Tìm phần đơn hàng, lịch sử mua hàng hoặc thông tin giao dịch.</li>
+        <li>Chọn đơn hàng tương ứng và đọc hướng dẫn hiển thị để xem thông tin thẻ.</li>
+        <li>Nếu không tìm thấy mã PIN, hãy liên hệ bộ phận hỗ trợ chính thức.</li>
+      </ol>
+      <div class="notice">Tên menu có thể khác nhau tùy sản phẩm. Không chia sẻ mã PIN, mật khẩu hoặc mã xác minh với người khác.</div>
+      <div class="actions">
+        <a class="link" href="https://www.inforshop.com.tw/home.jsp?lang=vn" target="_blank" rel="noopener">Mở Inforshop</a>
+        <button class="back" onclick="goHome()">← Quay lại</button>
+      </div>
+    </section>
+
+    <section class="guide" id="password">
+      <h2>🔐 Quên mật khẩu</h2>
+      <ol>
+        <li>Mở trang đăng nhập chính thức của Inforshop.</li>
+        <li>Tìm tùy chọn quên mật khẩu hoặc khôi phục mật khẩu.</li>
+        <li>Làm theo hướng dẫn xác minh được website chính thức cung cấp.</li>
+        <li>Nếu không thấy tùy chọn này hoặc gặp lỗi, hãy liên hệ hỗ trợ Inforshop.</li>
+      </ol>
+      <div class="notice">Không gửi mật khẩu hoặc mã OTP cho người hỗ trợ. Chỉ nhập thông tin xác minh trên website chính thức.</div>
+      <div class="actions">
+        <a class="link" href="https://www.inforshop.com.tw/web/member/login.jsp?lang=vn" target="_blank" rel="noopener">Mở trang đăng nhập</a>
+        <button class="back" onclick="goHome()">← Quay lại</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Trang hướng dẫn tham khảo độc lập. Dịch vụ và giao dịch được thực hiện trên website Inforshop chính thức.
+  </footer>
+
+  <script>
+    function showGuide(id) {
+      document.getElementById('home').style.display = 'none';
+      document.querySelectorAll('.guide').forEach(function(section) {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goHome() {
+      document.querySelectorAll('.guide').forEach(function(section) {
+        section.classList.remove('active');
+      });
+      document.getElementById('home').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
